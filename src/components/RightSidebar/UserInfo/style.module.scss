@@ -1,0 +1,29 @@
+.userBlock{
+  background-color: #ccc;
+
+
+  .userCard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    img{
+      max-width: 160px;
+      height: auto;
+      max-height: 160px;
+      display: block;
+    }
+  }
+
+  .userText{
+    b {
+      margin-right: 5px;
+    }
+  }
+
+}
+
+.userCardBody{
+  max-height: 160px;
+  overflow: auto;
+}

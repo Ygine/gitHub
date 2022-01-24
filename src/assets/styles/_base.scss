@@ -1,0 +1,119 @@
+html {
+  box-sizing: border-box;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Catamaran", 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #33374b;
+  background: linear-gradient(to right, #77a1d3, #79cbca, #e684ae);
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a{
+  text-decoration: none;
+  color:  rgba(0,118,255,0.9);
+}
+
+p{
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1,h2,h3,h4,h5{
+  margin: 0;
+}
+
+ul,ol{
+  list-style: inside;
+}
+
+ul, button{
+
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+video{
+  outline: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.main{
+  flex-grow: 1;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+button{
+  font-size: 1.6rem;
+}
+
+.App{
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.loader{
+  display: none;
+}
+
+.user-list-item{
+  position: relative;
+
+  &.active{
+    background-color: #ccc;
+
+    .loader{
+      display: block;
+    }
+  }
+}
+
+.card {
+  height: 100%;
+}

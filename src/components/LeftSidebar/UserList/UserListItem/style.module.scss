@@ -1,0 +1,41 @@
+.userListItem{
+  border-top: 1px solid #ccc;
+  padding: 8px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+
+  &:last-child{
+    border-bottom: 1px solid #ccc;
+  }
+
+  &:hover{
+    background-color: rgba(238,238,238, 0.5);
+  }
+
+  .avatar{
+    flex-grow: 1;
+    max-width: 120px;
+    img{
+
+      max-width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+
+  &.active{
+    background-color: #e684ae;
+  }
+
+  .name{
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+  }
+
+}

@@ -1,0 +1,29 @@
+.repoListWrap{
+  overflow: auto;
+  height: calc(100vh - 396px);
+}
+
+.repoListItem{
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 10px 8px;
+  min-height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+
+  &:last-child{
+    border-bottom: 1px solid #ccc;
+  }
+
+  &:hover{
+    background-color: #cccccc;
+  }
+}
+
+.repoListInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
