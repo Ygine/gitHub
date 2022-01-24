@@ -7,26 +7,15 @@ import styles from './style.module.scss'
 import {User} from "../../../types";
 interface UserItem {
   user: User;
-  handleClick: () => void;
+  handleClick: (e) => void;
   loading: boolean;
 };
 
 const UserListItem: FC<UserItem> = ({user, handleClick, loading}) => {
 
-  const handleActiveClass = (e) => {
-    const activeElement = document.querySelector('.user-list-item.active');
-    if(activeElement){
-      activeElement.classList.remove('active');
-    }
-    e.target.classList.add('active')
-  };
-
   return (
     <div
-      onClick={(e) => {
-        handleClick();
-        handleActiveClass(e)
-      }}
+      onClick={handleClick}
       className={`user-list-item ${styles.userListItem}`}
     >
       {loading && (
