@@ -1,21 +1,33 @@
 import React, {FC} from 'react';
 
-import { Loading } from '../../../shared/Loading';
+import { Loading } from '../../shared/Loading';
 
 import styles from './style.module.scss'
 
-import {User} from "../../../types";
+import {User} from "../../types";
 interface UserItem {
   user: User;
-  handleClick: (e) => void;
+  handleClick: (str: string) => void;
   loading: boolean;
 };
 
 const UserListItem: FC<UserItem> = ({user, handleClick, loading}) => {
 
+  const handleActiveClass = (e) => {
+    const activeElement = document.querySelector('.user-list-item.active');
+
+    if(activeElement){
+      activeElement.classList.remove('active');
+    }
+    e.target.closest('.user-list-item ').classList.add('active')
+  };
+
   return (
     <div
-      onClick={handleClick}
+      onClick={(e) => {
+        handleClick(user.login);
+        handleActiveClass(e);
+      }}
       className={`user-list-item ${styles.userListItem}`}
     >
       {loading && (

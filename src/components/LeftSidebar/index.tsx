@@ -1,8 +1,12 @@
 import React from 'react';
-import UserList from './UserList';
+import List from '../shared/List';
 import SerchBar from '../shared/SerchBar';
 
 import { useSearchUser } from '../../hooks/useSearchUser';
+import UserListItem from "./UserItem";
+
+import {User} from "../types";
+import styles from "./style.module.scss";
 
 interface SidebarProps {
   handleGetUserByLogin: (str: string) => void;
@@ -24,11 +28,20 @@ const LeftSidebar = ({handleGetUserByLogin, loading}: SidebarProps) => {
         <SerchBar onSearch={handleSearch} placeholder={'Search User'}/>
       </div>
 
-      <UserList
-        loading={loading}
-        handleGetUserByLogin={handleGetUserByLogin}
-        users={users}
+      <List
+        items={users}
+        className={styles.listWrap}
+        renderItem={
+          (user: User) => <UserListItem
+            user={user}
+            loading={loading}
+            handleClick={handleGetUserByLogin}
+            key={user.login}
+        />}
       />
+
+
+
     </div>
   );
 };
