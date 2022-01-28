@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useRef} from 'react';
 
 import { Loading } from '../../shared/Loading';
 
@@ -12,6 +12,7 @@ interface UserItem {
 };
 
 const UserListItem: FC<UserItem> = ({user, handleClick, loading}) => {
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleActiveClass = (e) => {
     const activeElement = document.querySelector('.user-list-item.active');
@@ -19,11 +20,12 @@ const UserListItem: FC<UserItem> = ({user, handleClick, loading}) => {
     if(activeElement){
       activeElement.classList.remove('active');
     }
-    e.target.closest('.user-list-item ').classList.add('active')
+    ref.current.closest('.user-list-item ').classList.add('active')
   };
 
   return (
     <div
+      ref={ref}
       onClick={(e) => {
         handleClick(user.login);
         handleActiveClass(e);
